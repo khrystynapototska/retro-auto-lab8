@@ -3,3 +3,6 @@
 
 ## Технології
 HTML5, Tailwind CSS (CDN), Vanilla JS.
+
+## Контакти
+Телефон: +380 50 000 00 00 (гілка feature)
