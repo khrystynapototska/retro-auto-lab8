@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="uk" class="scroll-smooth scroll-pt-[88px]">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Оренда ретро авто для особливих подій | Ретро Авто</title>
+    <meta
+      name="description"
+      content="Оренда ретро авто у Львові для весіль, фотосесій і ділових подій. Підберіть вільне авто на свою дату та одразу побачте ціну з усіма зборами."
+    />
+
+    <link rel="icon" type="image/png" href="assets/images/logo-mark.png" />
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+
+    <!-- Шрифти: Playfair Display (заголовки) + Inter (текст та інтерфейс) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Іконковий шрифт Font Awesome 6 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <!-- Tailwind CSS (Play CDN) + дизайн-токени з ЛР № 4 -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: { DEFAULT: "#002147", hover: "#143A66", active: "#001530" },
+              cream: "#FFFDD0",
+              secondary: "#0F4C3A",
+              // Золото — лише декор і фон на темно-синьому (на білому 2,42:1)
+              accent: { DEFAULT: "#C9A227", hover: "#D8B23A", active: "#B8921F" },
+              surface: { DEFAULT: "#FFFFFF", base: "#F7F5E8", muted: "#EFEDE0" },
+              text: "#1A1A1A",
+              muted: "#5C5C5C",
+              border: { DEFAULT: "#D8D4C0", strong: "#6B6658" },
+              focus: "#2563EB",
+              success: "#1E6B3A",
+            },
+            fontFamily: {
+              heading: ['"Playfair Display"', "Georgia", '"Times New Roman"', "serif"],
+              sans: ["Inter", "system-ui", "-apple-system", '"Segoe UI"', "sans-serif"],
+            },
+            fontSize: {
+              display: ["3.5rem", { lineHeight: "4rem" }],
+              h2: ["2.5rem", { lineHeight: "3rem" }],
+              h3: ["1.75rem", { lineHeight: "2.25rem" }],
+              h4: ["1.25rem", { lineHeight: "1.75rem" }],
+            },
+            letterSpacing: {
+              overline: "0.08em",
+            },
+            boxShadow: {
+              card: "0 1px 3px rgb(0 33 71 / 8%), 0 1px 2px rgb(0 33 71 / 6%)",
+              raised: "0 8px 20px rgb(0 33 71 / 12%)",
+              overlay: "0 20px 40px rgb(0 33 71 / 20%)",
+            },
+            maxWidth: {
+              container: "1312px",
+            },
+          },
+        },
+      };
+    </script>
+
+  </head>
+
+  <body class="bg-surface pb-[72px] font-sans text-base text-text antialiased md:pb-0 [&_:focus-visible]:outline-[3px] [&_:focus-visible]:outline-offset-2 [&_:focus-visible]:outline-focus motion-reduce:[&_*]:!transition-none">
+    <a
+      class="absolute -top-24 left-4 z-[200] rounded-lg bg-primary px-4 py-2 text-white focus:top-2"
+      href="#main"
+      >Перейти до основного вмісту</a
+    >
+
+    <!-- ===== Шапка сайту ===== -->
+    <header class="sticky top-0 z-50 border-b border-border bg-surface">
+      <div class="mx-auto flex w-full max-w-container flex-wrap items-center justify-between gap-x-4 px-4 py-3.5 md:px-8 xl:px-16">
+        <a class="inline-flex min-h-11 items-center gap-2" href="#top" aria-label="Ретро Авто — на початок сторінки">
+          <img class="w-9" src="assets/images/logo-mark.png" alt="" width="36" height="35" />
+          <span class="flex flex-col leading-none">
+            <span class="text-h4 font-semibold uppercase leading-none tracking-[0.06em] text-primary">Ретро</span>
+            <span class="text-xs font-medium uppercase tracking-[0.3em] text-secondary">Авто</span>
+          </span>
+        </a>
+
+        <!-- Мобільне меню: прихована панель; з lg — горизонтальний рядок -->
+        <nav
+          class="order-last hidden max-h-[calc(100dvh-72px)] w-full overflow-y-auto pb-4 lg:order-none lg:flex lg:max-h-none lg:w-auto lg:overflow-visible lg:pb-0"
+          id="main-nav"
+          aria-label="Головна навігація"
+        >
+          <ul class="flex flex-col divide-y divide-border border-t border-border lg:flex-row lg:items-center lg:gap-5 lg:divide-y-0 lg:border-0 xl:gap-8">
+            <li class="relative" data-dropdown>
+              <button
+                class="group flex min-h-11 w-full items-center justify-between gap-2 border-b-2 border-transparent text-sm font-medium text-primary transition-colors hover:border-accent focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus lg:w-auto lg:border-primary"
+                type="button"
+                aria-expanded="false"
+                aria-controls="catalog-menu"
+                data-toggle="dropdown"
+              >
+                Каталог авто
+                <i class="fa-solid fa-chevron-down text-xs transition-transform group-aria-expanded:rotate-180" aria-hidden="true"></i>
+              </button>
+              <ul
+                class="hidden pb-2 pl-4 lg:absolute lg:left-0 lg:top-full lg:z-10 lg:mt-2 lg:w-60 lg:rounded-xl lg:border lg:border-border lg:bg-surface lg:p-2 lg:shadow-raised"
+                id="catalog-menu"
+              >
+                <li><a class="flex min-h-11 items-center rounded-lg px-3 text-sm hover:bg-cream" href="#catalog">Усі авто</a></li>
+                <li><a class="flex min-h-11 items-center rounded-lg px-3 text-sm hover:bg-cream" href="#catalog">Весільні авто</a></li>
+                <li><a class="flex min-h-11 items-center rounded-lg px-3 text-sm hover:bg-cream" href="#catalog">Кабріолети</a></li>
+                <li><a class="flex min-h-11 items-center rounded-lg px-3 text-sm hover:bg-cream" href="#catalog">Авто для фотосесій</a></li>
+              </ul>
+            </li>
+            <li><a class="flex min-h-11 items-center whitespace-nowrap border-b-2 border-transparent text-sm font-medium transition-colors hover:border-accent" href="#how-it-works">Умови оренди</a></li>
+            <li><a class="flex min-h-11 items-center whitespace-nowrap border-b-2 border-transparent text-sm font-medium transition-colors hover:border-accent" href="#reviews">Відгуки</a></li>
+            <li><a class="flex min-h-11 items-center whitespace-nowrap border-b-2 border-transparent text-sm font-medium transition-colors hover:border-accent" href="#faq">FAQ</a></li>
+            <li><a class="flex min-h-11 items-center whitespace-nowrap border-b-2 border-transparent text-sm font-medium transition-colors hover:border-accent" href="#contacts">Контакти</a></li>
+          </ul>
+
+          <!-- Те, що на вузьких екранах не вміщається в рядок шапки -->
+          <div class="flex flex-col gap-3 border-t border-border pt-4 lg:hidden">
+            <p class="flex min-h-11 flex-wrap items-center gap-x-2 text-sm">
+              <a class="inline-flex min-h-11 items-center gap-2 font-medium text-primary" href="tel:+380320000000"><i class="fa-solid fa-phone" aria-hidden="true"></i>+380&nbsp;32&nbsp;000&nbsp;00&nbsp;00</a>
+              <span class="text-muted">· щодня 9:00–21:00</span>
+            </p>
+            <a
+              class="inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-7 py-3 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus sm:hidden"
+              href="#search"
+              >Підібрати авто</a
+            >
+          </div>
+        </nav>
+
+        <div class="flex items-center gap-4 xl:gap-6">
+          <p class="hidden items-center gap-1 text-sm text-muted md:flex">
+            <a class="inline-flex min-h-11 items-center px-1 font-semibold text-primary" href="#top" lang="uk" aria-current="true">UA</a>
+            <span aria-hidden="true">/</span>
+            <a class="inline-flex min-h-11 items-center px-1" href="#top" lang="en" hreflang="en">EN</a>
+          </p>
+          <p class="hidden flex-col leading-5 xl:flex">
+            <a class="inline-flex min-h-6 items-center gap-1 text-sm font-medium text-primary" href="tel:+380320000000">
+              <i class="fa-solid fa-phone" aria-hidden="true"></i> +380&nbsp;32&nbsp;000&nbsp;00&nbsp;00
+            </a>
+            <span class="text-xs text-muted">щодня 9:00–21:00</span>
+          </p>
+          <a
+            class="hidden min-h-11 items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-5 py-2.5 text-sm font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus sm:inline-flex"
+            href="#search"
+            >Підібрати авто</a
+          >
+          <button
+            class="group inline-flex h-11 w-11 items-center justify-center rounded-lg border border-border text-lg text-primary transition-colors hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus lg:hidden"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="Меню"
+            data-toggle="menu"
+          >
+            <span class="group-aria-expanded:hidden"><i class="fa-solid fa-bars" aria-hidden="true"></i></span>
+            <span class="hidden group-aria-expanded:inline"><i class="fa-solid fa-xmark" aria-hidden="true"></i></span>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" tabindex="-1" class="focus:outline-none">
+      <!-- ===== Hero з формою підбору ===== -->
+      <section class="bg-cream py-6 md:py-16" id="top" aria-labelledby="hero-title">
+        <div class="mx-auto grid w-full max-w-container items-center gap-8 px-4 md:px-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,1fr)] lg:gap-12 xl:px-16">
+          <div class="min-w-0">
+            <p class="mb-2 text-xs font-medium uppercase tracking-overline text-secondary">Весілля · Фотосесії · Ділові події · Львів</p>
+            <h1
+              class="mb-4 font-heading text-[2.25rem] font-bold leading-[2.75rem] text-primary md:text-5xl md:leading-[3.5rem] lg:text-display"
+              id="hero-title"
+            >
+              Оренда ретро авто для особливих подій
+            </h1>
+            <p class="mb-6 max-w-[34rem] text-lg leading-7">
+              Підберіть вільне авто на свою дату і одразу побачте фінальну ціну з усіма зборами.
+              Застава — окремо й повертається.
+            </p>
+
+            <form
+              class="flex flex-col gap-4 rounded-xl border border-border bg-surface p-4 shadow-card md:p-6"
+              id="search"
+              action="#catalog"
+              method="get"
+            >
+              <fieldset class="min-w-0 border-0">
+                <legend class="mb-2 p-0 text-sm font-medium">Формат оренди</legend>
+                <div class="flex flex-wrap gap-2">
+                  <label class="relative">
+                    <input class="peer sr-only" type="radio" name="format" value="driver" checked />
+                    <span
+                      class="inline-flex min-h-11 cursor-pointer items-center rounded-full border border-border-strong bg-surface px-6 text-sm font-medium text-primary transition-colors hover:bg-cream peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus"
+                      >З водієм</span
+                    >
+                  </label>
+                  <label class="relative">
+                    <input class="peer sr-only" type="radio" name="format" value="self-drive" />
+                    <span
+                      class="inline-flex min-h-11 cursor-pointer items-center rounded-full border border-border-strong bg-surface px-6 text-sm font-medium text-primary transition-colors hover:bg-cream peer-checked:border-primary peer-checked:bg-primary peer-checked:text-white peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-offset-2 peer-focus-visible:outline-focus"
+                      >Самостійно (self-drive)</span
+                    >
+                  </label>
+                </div>
+              </fieldset>
+
+              <div class="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 sm:grid-cols-3">
+                <div class="flex min-w-0 flex-col gap-1">
+                  <label class="text-sm font-medium" for="rent-date">Дата</label>
+                  <input
+                    class="min-h-11 w-full min-w-0 rounded-lg border border-border-strong bg-surface px-3 transition-colors hover:border-primary focus-visible:border-focus focus-visible:outline-offset-0"
+                    id="rent-date"
+                    name="date"
+                    type="date"
+                    required
+                  />
+                </div>
+                <div class="flex min-w-0 flex-col gap-1">
+                  <label class="text-sm font-medium" for="rent-time">Початок</label>
+                  <input
+                    class="min-h-11 w-full min-w-0 rounded-lg border border-border-strong bg-surface px-3 transition-colors hover:border-primary focus-visible:border-focus focus-visible:outline-offset-0"
+                    id="rent-time"
+                    name="time"
+                    type="time"
+                    value="12:00"
+                    required
+                  />
+                </div>
+                <div class="flex min-w-0 flex-col gap-1 min-[420px]:col-span-2 sm:col-span-1">
+                  <label class="text-sm font-medium" for="rent-duration">Тривалість</label>
+                  <select
+                    class="min-h-11 w-full min-w-0 rounded-lg border border-border-strong bg-surface px-3 transition-colors hover:border-primary focus-visible:border-focus focus-visible:outline-offset-0"
+                    id="rent-duration"
+                    name="duration"
+                  >
+                    <option value="2">2 год</option>
+                    <option value="3">3 год</option>
+                    <option value="4">4 год</option>
+                    <option value="6" selected>6 год</option>
+                    <option value="8">8 год</option>
+                    <option value="24">Доба</option>
+                  </select>
+                </div>
+              </div>
+              <p class="text-xs text-muted">Мінімум 2 год оренди</p>
+
+              <div class="flex flex-wrap items-center gap-4">
+                <button
+                  class="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-8 py-3 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus disabled:cursor-not-allowed disabled:border-border disabled:bg-surface-muted disabled:text-muted disabled:shadow-none sm:w-auto"
+                  type="submit"
+                >
+                  Показати вільні авто
+                </button>
+                <p class="flex-[1_1_10rem] text-sm text-muted">Побачите ціну та авто, вільні на вашу дату</p>
+              </div>
+            </form>
+          </div>
+
+          <figure class="overflow-hidden rounded-2xl shadow-raised">
+            <img
+              class="aspect-video w-full object-cover object-[72%_center] lg:aspect-[4/5]"
+              src="assets/images/hero-cabriolet.webp"
+              alt="Темно-синій ретро-кабріолет із букетом білих троянд і лляною стрічкою на тлі класичного особняка вранці"
+              width="1344"
+              height="768"
+              fetchpriority="high"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== Смуга довіри ===== -->
+      <section class="border-b border-border" aria-label="Чому нам довіряють">
+        <ul class="mx-auto grid w-full max-w-container grid-cols-2 gap-6 px-4 py-6 md:px-8 lg:grid-cols-4 xl:px-16">
+          <li class="flex min-w-0 items-center gap-3">
+            <i class="fa-solid fa-star w-8 text-center text-2xl text-accent" aria-hidden="true"></i>
+            <p class="flex flex-col text-sm"><strong class="font-semibold text-primary">4,9</strong> <span class="text-xs text-muted">· 90 відгуків</span></p>
+          </li>
+          <li class="flex min-w-0 items-center gap-3">
+            <img class="h-8 w-8 shrink-0 object-contain" src="assets/icons/icon-events.png" alt="" width="32" height="32" />
+            <p class="flex flex-col text-sm"><strong class="font-semibold text-primary">100+</strong> <span class="text-xs text-muted">проведених подій</span></p>
+          </li>
+          <li class="flex min-w-0 items-center gap-3">
+            <img class="h-8 w-8 shrink-0 object-contain" src="assets/icons/icon-insurance.png" alt="" width="32" height="32" />
+            <p class="flex flex-col text-sm"><strong class="font-semibold text-primary">Страховка</strong> <span class="text-xs text-muted">у кожній оренді</span></p>
+          </li>
+          <li class="flex min-w-0 items-center gap-3">
+            <img class="h-8 w-8 shrink-0 object-contain" src="assets/icons/icon-price.png" alt="" width="32" height="32" />
+            <p class="flex flex-col text-sm"><strong class="font-semibold text-primary">Ціна з усіма зборами</strong> <span class="text-xs text-muted">фіксується до оплати</span></p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ===== Каталог вільних авто ===== -->
+      <section class="py-12 md:py-16" id="catalog" aria-labelledby="catalog-title">
+        <div class="mx-auto w-full max-w-container px-4 md:px-8 xl:px-16">
+          <header class="mb-8 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p class="mb-2 text-xs font-medium uppercase tracking-overline text-secondary">Каталог</p>
+              <h2 class="font-heading text-h3 font-bold text-primary md:text-[2rem] md:leading-10 lg:text-h2" id="catalog-title">Популярні авто</h2>
+              <p class="mt-2 text-muted">Вільні на 17 жовт., 12:00–18:00 · з водієм</p>
+            </div>
+            <a
+              class="inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-primary bg-transparent px-7 py-3 font-semibold text-primary transition duration-150 hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+              href="#catalog"
+              >Весь каталог · 24 авто</a
+            >
+          </header>
+
+          <ul class="mb-6 flex flex-wrap items-center gap-2" aria-label="Фільтри каталогу">
+            <li class="mr-1 text-sm text-muted">Формат:</li>
+            <li><button class="min-h-11 rounded-full border border-border-strong bg-surface px-4 py-2 text-sm text-primary transition-colors hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white aria-pressed:hover:bg-primary-hover" type="button" aria-pressed="true">З водієм</button></li>
+            <li><button class="min-h-11 rounded-full border border-border-strong bg-surface px-4 py-2 text-sm text-primary transition-colors hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white aria-pressed:hover:bg-primary-hover" type="button" aria-pressed="false">Self-drive</button></li>
+            <li class="mr-1 text-sm text-muted">Епоха:</li>
+            <li><button class="min-h-11 rounded-full border border-border-strong bg-surface px-4 py-2 text-sm text-primary transition-colors hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white aria-pressed:hover:bg-primary-hover" type="button" aria-pressed="false">1950–60-ті</button></li>
+            <li><button class="min-h-11 rounded-full border border-border-strong bg-surface px-4 py-2 text-sm text-primary transition-colors hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus aria-pressed:border-primary aria-pressed:bg-primary aria-pressed:text-white aria-pressed:hover:bg-primary-hover" type="button" aria-pressed="false">1970–80-ті</button></li>
+          </ul>
+
+          <!-- Сітка карток: 1 колонка → sm: 2 → lg: 3 -->
+          <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Картка 1 -->
+            <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-card transition duration-200 hover:-translate-y-0.5 hover:shadow-raised motion-reduce:hover:translate-y-0">
+              <img
+                class="aspect-video w-full object-cover"
+                src="assets/images/car-mercedes-280sl.webp"
+                alt="Mercedes-Benz 280 SL 1969 року, червоний ретро-кабріолет"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="flex flex-1 flex-col gap-2 p-6">
+                <p class="self-start rounded-full bg-success px-3 py-1 text-xs font-medium text-white">Вільне на вашу дату</p>
+                <h3 class="font-heading text-h4 font-bold text-primary">Mercedes-Benz 280 SL</h3>
+                <p class="text-sm text-muted">1969 · кабріолет</p>
+                <p class="text-sm">Легендарний «Пагода» з відкидним дахом — найчастіший вибір для весільного виїзду.</p>
+                <ul class="flex flex-wrap gap-3 text-sm text-muted">
+                  <li>4 місця</li>
+                  <li>2 валізи</li>
+                  <li>АКП</li>
+                </ul>
+                <p class="mb-3 mt-2 flex flex-wrap items-baseline gap-2">
+                  <strong class="text-h4 text-primary">6 400 грн</strong>
+                  <span class="text-xs text-muted">за 2 год, з усіма зборами</span>
+                </p>
+                <a
+                  class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-7 py-3 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+                  href="#catalog"
+                  >Детальніше про авто</a
+                >
+              </div>
+            </article>
+
+            <!-- Картка 2 -->
+            <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-card transition duration-200 hover:-translate-y-0.5 hover:shadow-raised motion-reduce:hover:translate-y-0">
+              <img
+                class="aspect-video w-full object-cover"
+                src="assets/images/car-chevrolet-bel-air.webp"
+                alt="Chevrolet Bel Air 1957 року, бірюзове ретро-купе з білим дахом"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="flex flex-1 flex-col gap-2 p-6">
+                <p class="self-start rounded-full bg-success px-3 py-1 text-xs font-medium text-white">Вільне на вашу дату</p>
+                <h3 class="font-heading text-h4 font-bold text-primary">Chevrolet Bel Air</h3>
+                <p class="text-sm text-muted">1957 · купе</p>
+                <p class="text-sm">Американська класика з хромом і двоколірним кузовом — ефектно в кадрі.</p>
+                <ul class="flex flex-wrap gap-3 text-sm text-muted">
+                  <li>5 місць</li>
+                  <li>3 валізи</li>
+                  <li>АКП</li>
+                </ul>
+                <p class="mb-3 mt-2 flex flex-wrap items-baseline gap-2">
+                  <strong class="text-h4 text-primary">7 200 грн</strong>
+                  <span class="text-xs text-muted">за 2 год, з усіма зборами</span>
+                </p>
+                <a
+                  class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-7 py-3 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+                  href="#catalog"
+                  >Детальніше про авто</a
+                >
+              </div>
+            </article>
+
+            <!-- Картка 3: зайняте авто — вторинна дія -->
+            <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-card transition duration-200 hover:-translate-y-0.5 hover:shadow-raised motion-reduce:hover:translate-y-0">
+              <img
+                class="aspect-video w-full object-cover object-[30%_center] opacity-[.55]"
+                src="assets/images/car-gaz-21.webp"
+                alt="ГАЗ-21 «Волга» 1963 року, сірий ретро-седан"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="flex flex-1 flex-col gap-2 p-6">
+                <p class="self-start rounded-full bg-surface-muted px-3 py-1 text-xs font-medium text-muted">Зайняте 17 жовт.</p>
+                <h3 class="font-heading text-h4 font-bold text-primary">ГАЗ-21 «Волга»</h3>
+                <p class="text-sm text-muted">1963 · седан</p>
+                <p class="text-sm">Радянська класика у відреставрованому салоні — для ретро-зйомок і тематичних подій.</p>
+                <ul class="flex flex-wrap gap-3 text-sm text-muted">
+                  <li>5 місць</li>
+                  <li>3 валізи</li>
+                  <li>МКП</li>
+                </ul>
+                <p class="mb-3 mt-2 flex flex-wrap items-baseline gap-2">
+                  <strong class="text-h4 text-primary">4 900 грн</strong>
+                  <span class="text-xs text-muted">за 2 год, з усіма зборами</span>
+                </p>
+                <a
+                  class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-primary bg-transparent px-7 py-3 font-semibold text-primary transition duration-150 hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+                  href="#catalog"
+                  >Показати схожі вільні</a
+                >
+              </div>
+            </article>
+
+            <!-- Картка 4 -->
+            <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-card transition duration-200 hover:-translate-y-0.5 hover:shadow-raised motion-reduce:hover:translate-y-0">
+              <img
+                class="aspect-video w-full object-cover"
+                src="assets/images/car-mercedes-280sl.webp"
+                alt="Mercedes-Benz 280 SL 1969 року, червоний ретро-кабріолет"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="flex flex-1 flex-col gap-2 p-6">
+                <p class="self-start rounded-full bg-success px-3 py-1 text-xs font-medium text-white">Вільне на вашу дату</p>
+                <h3 class="font-heading text-h4 font-bold text-primary">Mercedes-Benz 280 SL · Весільний пакет</h3>
+                <p class="text-sm text-muted">1969 · кабріолет · 6 год</p>
+                <p class="text-sm">Декор стрічками й квітами, водій у костюмі та зупинки для фото за вашим маршрутом.</p>
+                <ul class="flex flex-wrap gap-3 text-sm text-muted">
+                  <li>4 місця</li>
+                  <li>Декор включено</li>
+                  <li>АКП</li>
+                </ul>
+                <p class="mb-3 mt-2 flex flex-wrap items-baseline gap-2">
+                  <strong class="text-h4 text-primary">17 900 грн</strong>
+                  <span class="text-xs text-muted">за 6 год, з усіма зборами</span>
+                </p>
+                <a
+                  class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-7 py-3 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+                  href="#catalog"
+                  >Детальніше про пакет</a
+                >
+              </div>
+            </article>
+
+            <!-- Картка 5 -->
+            <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-card transition duration-200 hover:-translate-y-0.5 hover:shadow-raised motion-reduce:hover:translate-y-0">
+              <img
+                class="aspect-video w-full object-cover"
+                src="assets/images/car-chevrolet-bel-air.webp"
+                alt="Chevrolet Bel Air 1957 року, бірюзове ретро-купе з білим дахом"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="flex flex-1 flex-col gap-2 p-6">
+                <p class="self-start rounded-full bg-success px-3 py-1 text-xs font-medium text-white">Вільне на вашу дату</p>
+                <h3 class="font-heading text-h4 font-bold text-primary">Chevrolet Bel Air · Фотопрогулянка</h3>
+                <p class="text-sm text-muted">1957 · купе · 3 год</p>
+                <p class="text-sm">Маршрут Старим містом із трьома зупинками для зйомки. Фотографа можна взяти свого.</p>
+                <ul class="flex flex-wrap gap-3 text-sm text-muted">
+                  <li>5 місць</li>
+                  <li>3 локації</li>
+                  <li>АКП</li>
+                </ul>
+                <p class="mb-3 mt-2 flex flex-wrap items-baseline gap-2">
+                  <strong class="text-h4 text-primary">9 800 грн</strong>
+                  <span class="text-xs text-muted">за 3 год, з усіма зборами</span>
+                </p>
+                <a
+                  class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-7 py-3 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+                  href="#catalog"
+                  >Детальніше про пакет</a
+                >
+              </div>
+            </article>
+
+            <!-- Картка 6: зайняте — кнопка в стані disabled -->
+            <article class="flex flex-col overflow-hidden rounded-xl border border-border bg-surface shadow-card">
+              <img
+                class="aspect-video w-full object-cover object-[30%_center] opacity-[.55]"
+                src="assets/images/car-gaz-21.webp"
+                alt="ГАЗ-21 «Волга» 1963 року, сірий ретро-седан"
+                width="1024"
+                height="768"
+                loading="lazy"
+                decoding="async"
+              />
+              <div class="flex flex-1 flex-col gap-2 p-6">
+                <p class="self-start rounded-full bg-surface-muted px-3 py-1 text-xs font-medium text-muted">Зайняте 17 жовт.</p>
+                <h3 class="font-heading text-h4 font-bold text-primary">ГАЗ-21 «Волга» · Ділова подія</h3>
+                <p class="text-sm text-muted">1963 · седан · 4 год</p>
+                <p class="text-sm">Представницький виїзд із водієм: зустріч гостей, трансфер на захід і назад.</p>
+                <ul class="flex flex-wrap gap-3 text-sm text-muted">
+                  <li>4 пасажири</li>
+                  <li>Водій</li>
+                  <li>МКП</li>
+                </ul>
+                <p class="mb-3 mt-2 flex flex-wrap items-baseline gap-2">
+                  <strong class="text-h4 text-primary">8 600 грн</strong>
+                  <span class="text-xs text-muted">за 4 год, з усіма зборами</span>
+                </p>
+                <button
+                  class="mt-auto inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-7 py-3 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus disabled:cursor-not-allowed disabled:border-border disabled:bg-surface-muted disabled:text-muted disabled:shadow-none"
+                  type="button"
+                  disabled
+                >
+                  Немає вільних слотів
+                </button>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Як це працює ===== -->
+      <section class="bg-surface-base py-12 md:py-16" id="how-it-works" aria-labelledby="how-title">
+        <div class="mx-auto w-full max-w-container px-4 md:px-8 xl:px-16">
+          <header class="mb-8">
+            <p class="mb-2 text-xs font-medium uppercase tracking-overline text-secondary">Процес</p>
+            <h2 class="font-heading text-h3 font-bold text-primary md:text-[2rem] md:leading-10 lg:text-h2" id="how-title">Як це працює</h2>
+            <p class="mt-2 text-muted">Від вибору дати до подачі авто — чотири кроки без дзвінків «уточнити ціну».</p>
+          </header>
+
+          <ol class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <li class="rounded-xl border border-border bg-surface p-6 shadow-card">
+              <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-accent" aria-hidden="true">01</span>
+              <h3 class="mb-2 text-lg font-semibold text-primary">Оберіть дату й формат</h3>
+              <p class="text-sm text-muted">Вкажіть дату, час і чи потрібен водій — це займе хвилину.</p>
+            </li>
+            <li class="rounded-xl border border-border bg-surface p-6 shadow-card">
+              <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-accent" aria-hidden="true">02</span>
+              <h3 class="mb-2 text-lg font-semibold text-primary">Побачте фінальну ціну</h3>
+              <p class="text-sm text-muted">Ціна з усіма зборами одразу. Застава вказана окремо й повертається.</p>
+            </li>
+            <li class="rounded-xl border border-border bg-surface p-6 shadow-card">
+              <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-accent" aria-hidden="true">03</span>
+              <h3 class="mb-2 text-lg font-semibold text-primary">Підтвердьте бронювання</h3>
+              <p class="text-sm text-muted">Передоплата 30 % онлайн. Договір і страховку оформимо разом із вами.</p>
+            </li>
+            <li class="rounded-xl border border-border bg-surface p-6 shadow-card">
+              <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-accent" aria-hidden="true">04</span>
+              <h3 class="mb-2 text-lg font-semibold text-primary">Авто подають на місце</h3>
+              <p class="text-sm text-muted">Водій приїжджає за 15 хв до початку. Фото авто надішлемо наперед.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ===== МЕДІА: відео (YouTube, youtube-nocookie.com) ===== -->
+      <section class="bg-cream py-10 md:py-16" id="video" aria-labelledby="video-title">
+        <div class="mx-auto grid w-full max-w-container items-center gap-8 px-4 md:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-12 xl:px-16">
+          <div class="min-w-0">
+            <p class="mb-2 text-xs font-medium uppercase tracking-overline text-secondary">Відео</p>
+            <h2 class="mb-4 font-heading text-h3 font-bold text-primary md:text-[2rem] md:leading-10 lg:text-h2" id="video-title">Ретро-авто на весіллі: подивіться, як це виглядає</h2>
+            <p class="max-w-[30rem] text-lg leading-7">Короткий огляд того, як класичні автомобілі виглядають на святі: від подачі до виїзду з церемонії.</p>
+          </div>
+          <figure class="min-w-0">
+            <div class="aspect-video w-full overflow-hidden rounded-xl bg-surface-muted shadow-lg">
+              <iframe
+                class="size-full border-0"
+                src="https://www.youtube-nocookie.com/embed/0a7PfpDen-g"
+                title="Відео: весілля з ретро-автомобілями"
+                loading="lazy"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <figcaption class="mt-3 text-xs text-muted">Ілюстративне відео: канал Vintage Wedding Cars Sydney (YouTube).</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== Відгуки ===== -->
+      <section class="py-12 md:py-16" id="reviews" aria-labelledby="reviews-title">
+        <div class="mx-auto w-full max-w-container px-4 md:px-8 xl:px-16">
+          <header class="mb-8 flex flex-wrap items-end justify-between gap-6">
+            <div>
+              <p class="mb-2 text-xs font-medium uppercase tracking-overline text-secondary">Відгуки</p>
+              <h2 class="font-heading text-h3 font-bold text-primary md:text-[2rem] md:leading-10 lg:text-h2" id="reviews-title">Нас обирають для найважливіших днів</h2>
+            </div>
+            <p class="text-sm font-medium text-primary">
+              <i class="fa-solid fa-star text-accent" aria-hidden="true"></i>
+              4,9 із 5 · 90 відгуків
+            </p>
+          </header>
+
+          <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+            <article class="flex flex-col gap-3 rounded-xl bg-cream p-6">
+              <p class="tracking-[0.15em] text-accent" role="img" aria-label="Оцінка 5 із 5">★★★★★</p>
+              <blockquote class="flex-1">
+                <p>«Mercedes подали за 15 хвилин до виїзду, водій допоміг із букетом і шлейфом. Усе пройшло без жодного нервування.»</p>
+              </blockquote>
+              <footer>
+                <p class="text-sm font-semibold text-primary">Оксана та Ігор</p>
+                <p class="text-xs text-muted">Весілля, вересень 2026</p>
+              </footer>
+            </article>
+
+            <article class="flex flex-col gap-3 rounded-xl bg-cream p-6">
+              <p class="tracking-[0.15em] text-accent" role="img" aria-label="Оцінка 5 із 5">★★★★★</p>
+              <blockquote class="flex-1">
+                <p>«Брали Bel Air на дві години для зйомки. Зручно, що ціна одразу з усіма зборами — жодних сюрпризів.»</p>
+              </blockquote>
+              <footer>
+                <p class="text-sm font-semibold text-primary">Марта Д.</p>
+                <p class="text-xs text-muted">Фотосесія, серпень 2026</p>
+              </footer>
+            </article>
+
+            <article class="flex flex-col gap-3 rounded-xl bg-cream p-6">
+              <p class="tracking-[0.15em] text-accent" role="img" aria-label="Оцінка 5 із 5">★★★★★</p>
+              <blockquote class="flex-1">
+                <p>«Потрібне було представницьке авто з водієм. Договір оформили онлайн, авто прибуло вчасно.»</p>
+              </blockquote>
+              <footer>
+                <p class="text-sm font-semibold text-primary">Андрій К.</p>
+                <p class="text-xs text-muted">Ділова подія, липень 2026</p>
+              </footer>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== Часті запитання ===== -->
+      <section class="bg-surface-base py-12 md:py-16" id="faq" aria-labelledby="faq-title">
+        <div class="mx-auto grid w-full max-w-container items-start gap-8 px-4 md:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-12 xl:px-16">
+          <aside aria-label="Не знайшли відповідь?">
+            <p class="mb-2 text-xs font-medium uppercase tracking-overline text-secondary">Часті запитання</p>
+            <h2 class="font-heading text-h3 font-bold text-primary md:text-[2rem] md:leading-10 lg:text-h2" id="faq-title">Відповіді, які шукають найчастіше</h2>
+            <p class="mb-6 mt-4 text-sm text-muted">Не знайшли свого питання? Напишіть у Viber — відповідаємо протягом 15 хвилин у робочі години.</p>
+            <a
+              class="inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-primary bg-transparent px-7 py-3 font-semibold text-primary transition duration-150 hover:bg-cream active:bg-surface-muted focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+              href="#footer"
+              >Поставити запитання</a
+            >
+          </aside>
+
+          <div class="flex flex-col gap-3">
+            <details class="group rounded-xl border border-border bg-surface open:border-[1.5px] open:border-primary" open>
+              <summary class="flex list-none [&::-webkit-details-marker]:hidden after:shrink-0 after:text-h4 after:leading-none after:content-['+'] group-open:after:content-['−'] min-h-11 cursor-pointer items-center justify-between gap-4 rounded-xl px-6 py-4 font-semibold text-primary">Що входить у вказану ціну?</summary>
+              <p class="px-6 pb-6 text-sm text-muted">Подача авто в межах Львова, водій, пальне на 100 км та страховка. Ціна з усіма зборами фіксується в момент бронювання.</p>
+            </details>
+            <details class="group rounded-xl border border-border bg-surface open:border-[1.5px] open:border-primary">
+              <summary class="flex list-none [&::-webkit-details-marker]:hidden after:shrink-0 after:text-h4 after:leading-none after:content-['+'] group-open:after:content-['−'] min-h-11 cursor-pointer items-center justify-between gap-4 rounded-xl px-6 py-4 font-semibold text-primary">Яка застава і коли її повертають?</summary>
+              <p class="px-6 pb-6 text-sm text-muted">Застава вказується окремо від ціни оренди й повертається після огляду авто в день завершення оренди.</p>
+            </details>
+            <details class="group rounded-xl border border-border bg-surface open:border-[1.5px] open:border-primary">
+              <summary class="flex list-none [&::-webkit-details-marker]:hidden after:shrink-0 after:text-h4 after:leading-none after:content-['+'] group-open:after:content-['−'] min-h-11 cursor-pointer items-center justify-between gap-4 rounded-xl px-6 py-4 font-semibold text-primary">Чи можна орендувати без водія (self-drive)?</summary>
+              <p class="px-6 pb-6 text-sm text-muted">Так, для частини авто доступний формат self-drive. Потрібне посвідчення водія зі стажем від трьох років.</p>
+            </details>
+            <details class="group rounded-xl border border-border bg-surface open:border-[1.5px] open:border-primary">
+              <summary class="flex list-none [&::-webkit-details-marker]:hidden after:shrink-0 after:text-h4 after:leading-none after:content-['+'] group-open:after:content-['−'] min-h-11 cursor-pointer items-center justify-between gap-4 rounded-xl px-6 py-4 font-semibold text-primary">Що буде, якщо погода зіпсується?</summary>
+              <p class="px-6 pb-6 text-sm text-muted">Якщо подія переноситься через погоду, ми безкоштовно переносимо бронювання на іншу вільну дату.</p>
+            </details>
+            <details class="group rounded-xl border border-border bg-surface open:border-[1.5px] open:border-primary">
+              <summary class="flex list-none [&::-webkit-details-marker]:hidden after:shrink-0 after:text-h4 after:leading-none after:content-['+'] group-open:after:content-['−'] min-h-11 cursor-pointer items-center justify-between gap-4 rounded-xl px-6 py-4 font-semibold text-primary">Як скасувати бронювання?</summary>
+              <p class="px-6 pb-6 text-sm text-muted">Скасуйте бронювання через Viber або за телефоном. Умови повернення передоплати залежать від терміну до початку оренди.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== КОНТАКТИ: карта Google Maps та інформер погоди ===== -->
+      <section class="py-10 md:py-16" id="contacts" aria-labelledby="contacts-heading">
+        <div class="mx-auto grid w-full max-w-container items-start gap-8 px-4 md:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:gap-12 xl:px-16">
+          <div class="flex min-w-0 flex-col gap-6">
+            <div>
+              <p class="mb-2 text-xs font-medium uppercase tracking-overline text-secondary">Контакти</p>
+              <h2 class="mb-4 font-heading text-h3 font-bold text-primary md:text-[2rem] md:leading-10 lg:text-h2" id="contacts-heading">Де нас знайти</h2>
+              <address class="flex flex-col gap-1 not-italic">
+                <p>вул. Під Дубом 7а, Львів</p>
+                <p><a class="inline-flex min-h-11 items-center font-semibold text-primary underline underline-offset-[3px]" href="tel:+380320000000">+380&nbsp;32&nbsp;000&nbsp;00&nbsp;00</a></p>
+                <p class="text-sm text-muted">щодня 9:00–21:00</p>
+              </address>
+            </div>
+
+            <!-- ІНФОРМЕР: погода у Львові (Open-Meteo), дані підставляє скрипт унизу сторінки -->
+            <aside class="rounded-xl border border-border bg-cream p-6" aria-labelledby="weather-title">
+              <h3 class="mb-2 font-heading text-h4 font-semibold text-primary" id="weather-title">Погода у Львові зараз</h3>
+              <p class="text-lg font-semibold" id="weather-now" aria-live="polite">Завантажуємо дані…</p>
+              <p class="mt-1 text-sm text-muted" id="weather-hint"></p>
+              <p class="mt-3 text-xs text-muted">Дані: Open-Meteo.com</p>
+            </aside>
+          </div>
+
+          <figure class="min-w-0">
+            <div class="aspect-[4/3] w-full overflow-hidden rounded-xl border border-border bg-surface-muted shadow-lg md:aspect-video">
+              <iframe
+                class="size-full border-0"
+                src="https://www.google.com/maps?q=%D0%B2%D1%83%D0%BB.+%D0%9F%D1%96%D0%B4+%D0%94%D1%83%D0%B1%D0%BE%D0%BC+7%D0%B0,+%D0%9B%D1%8C%D0%B2%D1%96%D0%B2&hl=uk&z=16&output=embed"
+                title="Карта: вул. Під Дубом 7а, Львів"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <figcaption class="mt-3 text-xs text-muted">Адреса видачі авто. Карта: Google Maps.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <!-- ===== Заклик до дії (темне тло — тут золота кнопка допустима) ===== -->
+      <section class="bg-primary py-12 text-white md:py-16" aria-labelledby="cta-title">
+        <div class="mx-auto flex w-full max-w-container flex-wrap items-center justify-between gap-8 px-4 md:px-8 xl:px-16">
+          <div>
+            <h2 class="mb-2 max-w-[30rem] font-heading text-2xl font-bold text-cream md:text-h3" id="cta-title">Перевірте, які авто вільні на вашу дату</h2>
+            <p class="text-cream">Займе менше хвилини — покажемо ціну з усіма зборами без дзвінка.</p>
+          </div>
+          <div class="flex w-full flex-wrap items-center gap-6 md:w-auto">
+            <a
+              class="inline-flex min-h-11 w-full items-center justify-center rounded-lg border-[1.5px] border-transparent bg-accent px-7 py-3 font-semibold text-primary transition duration-150 hover:bg-accent-hover hover:shadow-raised active:bg-accent-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-cream md:w-auto"
+              href="#search"
+              >Підібрати авто</a
+            >
+            <p class="text-sm">
+              або
+              <a class="inline-flex min-h-11 items-center font-medium underline underline-offset-[3px] focus-visible:outline-cream" href="tel:+380320000000">+380&nbsp;32&nbsp;000&nbsp;00&nbsp;00</a>
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===== Підвал: 1 колонка → md: 2 → lg: 4 ===== -->
+    <footer class="border-t border-cream/20 bg-primary text-cream" id="footer">
+      <div class="mx-auto w-full max-w-container px-4 py-12 md:px-8 xl:px-16">
+        <div class="mb-8 flex flex-col gap-4 border-b border-cream/20 pb-8 md:flex-row md:items-center md:justify-between">
+          <a class="inline-flex min-h-11 items-center gap-2 focus-visible:outline-cream" href="#top" aria-label="Ретро Авто — на початок сторінки">
+            <img class="w-9" src="assets/images/logo-mark-cream.png" alt="" width="36" height="35" />
+            <span class="flex flex-col leading-none">
+              <span class="text-h4 font-semibold uppercase leading-none tracking-[0.06em] text-white">Ретро</span>
+              <span class="text-xs font-medium uppercase tracking-[0.3em] text-accent">Авто</span>
+            </span>
+          </a>
+          <p class="max-w-[28rem] text-sm">
+            Оренда класичних авто у Львові для весіль, фотосесій та ділових подій. Ціна з усіма зборами — без прихованих платежів.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+          <nav aria-label="Каталог">
+            <h2 class="mb-4 text-xs font-medium uppercase tracking-overline text-accent">Каталог</h2>
+            <ul class="flex flex-col">
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#catalog">Весільні авто</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#catalog">Кабріолети</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#catalog">Ретро-лімузини</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#catalog">Авто для фотосесій</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#catalog">Весь каталог</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Компанія">
+            <h2 class="mb-4 text-xs font-medium uppercase tracking-overline text-accent">Компанія</h2>
+            <ul class="flex flex-col">
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#top">Про нас</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#how-it-works">Умови оренди</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#how-it-works">Страхування</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#reviews">Відгуки</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#footer">Контакти</a></li>
+            </ul>
+          </nav>
+
+          <nav aria-label="Допомога">
+            <h2 class="mb-4 text-xs font-medium uppercase tracking-overline text-accent">Допомога</h2>
+            <ul class="flex flex-col">
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#how-it-works">Як забронювати</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#faq">Скасування та повернення</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#faq">Потрібен водій?</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#faq">FAQ</a></li>
+              <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#footer">Зв’язок у Viber</a></li>
+            </ul>
+          </nav>
+
+          <section aria-labelledby="contacts-title">
+            <h2 class="mb-4 text-xs font-medium uppercase tracking-overline text-accent" id="contacts-title">Контакти</h2>
+            <address class="flex flex-col gap-1 text-sm not-italic">
+              <p><a class="inline-flex min-h-11 items-center text-h4 font-semibold text-white transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="tel:+380320000000">+380&nbsp;32&nbsp;000&nbsp;00&nbsp;00</a></p>
+              <p>щодня 9:00–21:00</p>
+              <p>вул. Під Дубом 7а, Львів</p>
+              <p><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="mailto:hello@retroavto.ua">hello@retroavto.ua</a></p>
+            </address>
+          </section>
+        </div>
+      </div>
+
+      <div class="border-t border-cream/20">
+        <div class="mx-auto flex w-full max-w-container flex-wrap items-center justify-between gap-4 px-4 py-3 md:px-8 xl:px-16">
+          <p class="text-sm"><small>© 2026 Ретро Авто. Усі права захищені.</small></p>
+          <ul class="flex flex-wrap gap-x-6">
+            <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#footer">Політика конфіденційності</a></li>
+            <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#footer">Публічна оферта</a></li>
+            <li><a class="inline-flex min-h-11 items-center text-sm transition-colors hover:text-accent hover:underline focus-visible:outline-cream" href="#footer">Повернення коштів</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Прилипла CTA-смуга (лише до md) -->
+    <aside
+      class="fixed inset-x-0 bottom-0 z-40 flex items-center justify-between gap-4 border-t border-border bg-surface px-4 py-2 shadow-overlay md:hidden"
+      aria-label="Швидкий підбір авто"
+    >
+      <p class="text-sm text-muted">від <strong class="text-lg text-primary">4 900 грн</strong></p>
+      <a
+        class="inline-flex min-h-11 items-center justify-center rounded-lg border-[1.5px] border-transparent bg-primary px-5 py-2.5 font-semibold text-white transition duration-150 hover:bg-primary-hover hover:shadow-card active:bg-primary-active focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-offset-2 focus-visible:outline-focus"
+        href="#search"
+        >Підібрати авто</a
+      >
+    </aside>
+
+    <!-- Мінімальний JS: гамбургер-меню, dropdown, чіпи-фільтри -->
+    <script>
+      const toggles = document.querySelectorAll("[data-toggle]");
+
+      const setOpen = (btn, open) => {
+        btn.setAttribute("aria-expanded", String(open));
+        document.getElementById(btn.getAttribute("aria-controls")).classList.toggle("hidden", !open);
+      };
+
+      toggles.forEach((btn) => {
+        btn.addEventListener("click", () => setOpen(btn, btn.getAttribute("aria-expanded") !== "true"));
+      });
+
+      // Esc закриває найглибше відкрите меню (dropdown стоїть у DOM раніше за гамбургер)
+      document.addEventListener("keydown", (event) => {
+        if (event.key !== "Escape") return;
+        const open = [...toggles].find((btn) => btn.getAttribute("aria-expanded") === "true");
+        if (!open) return;
+        setOpen(open, false);
+        open.focus();
+      });
+
+      // Клік поза dropdown закриває його
+      document.addEventListener("click", (event) => {
+        toggles.forEach((btn) => {
+          if (btn.dataset.toggle === "dropdown" && !btn.parentElement.contains(event.target)) setOpen(btn, false);
+        });
+      });
+
+      // Перехід за посиланням меню закриває мобільну панель
+      document.querySelectorAll("#main-nav a").forEach((link) => {
+        link.addEventListener("click", () => toggles.forEach((btn) => setOpen(btn, false)));
+      });
+
+      document.querySelectorAll("button[aria-pressed]").forEach((chip) => {
+        chip.addEventListener("click", () => {
+          chip.setAttribute("aria-pressed", String(chip.getAttribute("aria-pressed") !== "true"));
+        });
+      });
+
+      // Інформер погоди: Open-Meteo (без ключа), Львів
+      const weatherNow = document.getElementById("weather-now");
+      const weatherHint = document.getElementById("weather-hint");
+      const describe = (code) => {
+        if (code === 0) return "ясно";
+        if (code <= 3) return "хмарно";
+        if (code === 45 || code === 48) return "туман";
+        if (code >= 51 && code <= 57) return "мряка";
+        if ((code >= 61 && code <= 67) || (code >= 80 && code <= 82)) return "дощ";
+        if ((code >= 71 && code <= 77) || code === 85 || code === 86) return "сніг";
+        if (code >= 95) return "гроза";
+        return "мінлива погода";
+      };
+      fetch("https://api.open-meteo.com/v1/forecast?latitude=49.84&longitude=24.03&current=temperature_2m,weather_code,wind_speed_10m&timezone=Europe%2FKyiv")
+        .then((response) => {
+          if (!response.ok) throw new Error("HTTP " + response.status);
+          return response.json();
+        })
+        .then((data) => {
+          const { temperature_2m: t, weather_code: code, wind_speed_10m: wind } = data.current;
+          const text = describe(code);
+          weatherNow.textContent = Math.round(t) + " °C, " + text + ", вітер " + Math.round(wind) + " км/год";
+          const wet = /дощ|сніг|гроза|мряка/.test(text);
+          if (wet) weatherHint.textContent = "Якщо погода зіпсує свято, ми безкоштовно перенесемо бронювання на іншу дату.";
+          else if (t >= 10) weatherHint.textContent = "Гарні умови для поїздки на ретро-авто.";
+          else weatherHint.textContent = "Прохолодно: для відкритого авто візьміть теплий одяг чи плед.";
+        })
+        .catch(() => {
+          weatherNow.textContent = "Не вдалося завантажити погоду";
+          weatherHint.textContent = "Спробуйте оновити сторінку пізніше.";
+        });
+    </script>
+  </body>
+</html>
