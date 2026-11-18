@@ -3,3 +3,6 @@
 
 ## Технології
 HTML5, Tailwind CSS (CDN), Vanilla JS.
+
+## Контакти
+Телефон: +380 67 111 22 33 (гілка main)
